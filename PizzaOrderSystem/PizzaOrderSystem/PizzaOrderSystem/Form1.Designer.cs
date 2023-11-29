@@ -50,6 +50,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtPriceStatus = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnstatReturn = new System.Windows.Forms.Button();
             this.StatusTxt = new System.Windows.Forms.Label();
@@ -89,6 +91,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.DDOrderStatus = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -117,7 +120,7 @@
             this.btnOrder.TabIndex = 5;
             this.btnOrder.Text = "Order Pizza";
             this.btnOrder.UseVisualStyleBackColor = true;
-            this.btnOrder.Click += new System.EventHandler(this.button5_Click);
+            this.btnOrder.Click += new System.EventHandler(this.orderPizza_Click);
             // 
             // btnCheck
             // 
@@ -127,7 +130,7 @@
             this.btnCheck.TabIndex = 4;
             this.btnCheck.Text = "Check Order Status";
             this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Click += new System.EventHandler(this.button4_Click);
+            this.btnCheck.Click += new System.EventHandler(this.orderStatus_Click);
             // 
             // btnOrderHis
             // 
@@ -137,7 +140,7 @@
             this.btnOrderHis.TabIndex = 3;
             this.btnOrderHis.Text = "Check Order Histoty";
             this.btnOrderHis.UseVisualStyleBackColor = true;
-            this.btnOrderHis.Click += new System.EventHandler(this.button3_Click);
+            this.btnOrderHis.Click += new System.EventHandler(this.orderHistory_Click);
             // 
             // btnEditAcc
             // 
@@ -147,7 +150,7 @@
             this.btnEditAcc.TabIndex = 1;
             this.btnEditAcc.Text = "Edit Account";
             this.btnEditAcc.UseVisualStyleBackColor = true;
-            this.btnEditAcc.Click += new System.EventHandler(this.button1_Click);
+            this.btnEditAcc.Click += new System.EventHandler(this.editAccount_Click);
             // 
             // btnAccSign
             // 
@@ -157,13 +160,13 @@
             this.btnAccSign.TabIndex = 2;
             this.btnAccSign.Text = "Account SignUp";
             this.btnAccSign.UseVisualStyleBackColor = true;
-            this.btnAccSign.Click += new System.EventHandler(this.button2_Click);
+            this.btnAccSign.Click += new System.EventHandler(this.accountCreate_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(304, 9);
+            this.label1.Location = new System.Drawing.Point(257, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(308, 31);
             this.label1.TabIndex = 1;
@@ -198,7 +201,7 @@
             this.btnAccSubmit.TabIndex = 12;
             this.btnAccSubmit.Text = "Submit";
             this.btnAccSubmit.UseVisualStyleBackColor = true;
-            this.btnAccSubmit.Click += new System.EventHandler(this.button7_Click);
+            this.btnAccSubmit.Click += new System.EventHandler(this.appSubmit_Click);
             // 
             // btnAccCancel
             // 
@@ -208,7 +211,7 @@
             this.btnAccCancel.TabIndex = 11;
             this.btnAccCancel.Text = "Cancel";
             this.btnAccCancel.UseVisualStyleBackColor = true;
-            this.btnAccCancel.Click += new System.EventHandler(this.button6_Click);
+            this.btnAccCancel.Click += new System.EventHandler(this.appCancel_Click);
             // 
             // Passtxt
             // 
@@ -302,6 +305,9 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel4.Controls.Add(this.DDOrderStatus);
+            this.panel4.Controls.Add(this.label21);
+            this.panel4.Controls.Add(this.txtPriceStatus);
             this.panel4.Controls.Add(this.label14);
             this.panel4.Controls.Add(this.btnstatReturn);
             this.panel4.Controls.Add(this.StatusTxt);
@@ -309,6 +315,32 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(404, 378);
             this.panel4.TabIndex = 14;
+            // 
+            // label21
+            // 
+            this.label21.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Maroon;
+            this.label21.Location = new System.Drawing.Point(85, 220);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(258, 46);
+            this.label21.TabIndex = 42;
+            this.label21.Text = "[Pay at Store]";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtPriceStatus
+            // 
+            this.txtPriceStatus.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtPriceStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPriceStatus.ForeColor = System.Drawing.Color.Maroon;
+            this.txtPriceStatus.Location = new System.Drawing.Point(85, 184);
+            this.txtPriceStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtPriceStatus.Name = "txtPriceStatus";
+            this.txtPriceStatus.Size = new System.Drawing.Size(258, 46);
+            this.txtPriceStatus.TabIndex = 41;
+            this.txtPriceStatus.Text = "[ENTER PRICE HERE]";
+            this.txtPriceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label14
             // 
@@ -328,14 +360,14 @@
             this.btnstatReturn.TabIndex = 12;
             this.btnstatReturn.Text = "Return";
             this.btnstatReturn.UseVisualStyleBackColor = true;
-            this.btnstatReturn.Click += new System.EventHandler(this.button10_Click);
+            this.btnstatReturn.Click += new System.EventHandler(this.statusReturn_Click);
             // 
             // StatusTxt
             // 
             this.StatusTxt.Cursor = System.Windows.Forms.Cursors.Default;
             this.StatusTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StatusTxt.ForeColor = System.Drawing.Color.Maroon;
-            this.StatusTxt.Location = new System.Drawing.Point(85, 122);
+            this.StatusTxt.Location = new System.Drawing.Point(85, 134);
             this.StatusTxt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.StatusTxt.Name = "StatusTxt";
             this.StatusTxt.Size = new System.Drawing.Size(258, 46);
@@ -373,7 +405,7 @@
             this.btnReOrder.TabIndex = 44;
             this.btnReOrder.Text = "Reorder";
             this.btnReOrder.UseVisualStyleBackColor = true;
-            this.btnReOrder.Click += new System.EventHandler(this.button12_Click);
+            this.btnReOrder.Click += new System.EventHandler(this.historyReOrder_Click);
             // 
             // DDOrderHis
             // 
@@ -403,7 +435,7 @@
             this.button11.TabIndex = 12;
             this.button11.Text = "Cancel";
             this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.button11.Click += new System.EventHandler(this.historyCancel_Click);
             // 
             // panel6
             // 
@@ -428,7 +460,7 @@
             this.btnAddOrder.TabIndex = 47;
             this.btnAddOrder.Text = "Add to Order";
             this.btnAddOrder.UseVisualStyleBackColor = true;
-            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
+            this.btnAddOrder.Click += new System.EventHandler(this.AddOrder_Click);
             // 
             // OrderSizeDD
             // 
@@ -455,7 +487,7 @@
             this.btnOrderNow.TabIndex = 44;
             this.btnOrderNow.Text = "Order Now";
             this.btnOrderNow.UseVisualStyleBackColor = true;
-            this.btnOrderNow.Click += new System.EventHandler(this.btnOrderNow_Click);
+            this.btnOrderNow.Click += new System.EventHandler(this.OrderNow_Click);
             // 
             // label16
             // 
@@ -475,7 +507,7 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.button14_Click);
+            this.btnCancel.Click += new System.EventHandler(this.orderCancel_Click);
             // 
             // OrderListtxt
             // 
@@ -511,7 +543,7 @@
             this.btnAccLog.TabIndex = 46;
             this.btnAccLog.Text = "Account Login";
             this.btnAccLog.UseVisualStyleBackColor = true;
-            this.btnAccLog.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnAccLog.Click += new System.EventHandler(this.accountLogin_Click_1);
             // 
             // panel8
             // 
@@ -536,7 +568,7 @@
             this.btnLogSubmit.TabIndex = 12;
             this.btnLogSubmit.Text = "Submit";
             this.btnLogSubmit.UseVisualStyleBackColor = true;
-            this.btnLogSubmit.Click += new System.EventHandler(this.btnLogSubmit_Click);
+            this.btnLogSubmit.Click += new System.EventHandler(this.LogSubmit_Click);
             // 
             // btnLogCancel
             // 
@@ -546,7 +578,7 @@
             this.btnLogCancel.TabIndex = 11;
             this.btnLogCancel.Text = "Cancel";
             this.btnLogCancel.UseVisualStyleBackColor = true;
-            this.btnLogCancel.Click += new System.EventHandler(this.btnLogCancel_Click);
+            this.btnLogCancel.Click += new System.EventHandler(this.LogCancel_Click);
             // 
             // txtLogPassword
             // 
@@ -642,7 +674,7 @@
             this.btnEditSubmit.TabIndex = 12;
             this.btnEditSubmit.Text = "Submit";
             this.btnEditSubmit.UseVisualStyleBackColor = true;
-            this.btnEditSubmit.Click += new System.EventHandler(this.btnEditSubmit_Click);
+            this.btnEditSubmit.Click += new System.EventHandler(this.editSubmit_Click);
             // 
             // btnEditCancel
             // 
@@ -652,7 +684,7 @@
             this.btnEditCancel.TabIndex = 11;
             this.btnEditCancel.Text = "Cancel";
             this.btnEditCancel.UseVisualStyleBackColor = true;
-            this.btnEditCancel.Click += new System.EventHandler(this.button2_Click_1);
+            this.btnEditCancel.Click += new System.EventHandler(this.editCancel_Click);
             // 
             // txtEditPhone
             // 
@@ -711,6 +743,20 @@
             this.label19.TabIndex = 0;
             this.label19.Text = "Member Edit Form";
             // 
+            // DDOrderStatus
+            // 
+            this.DDOrderStatus.AutoCompleteCustomSource.AddRange(new string[] {
+            "Cheese",
+            "Sausage",
+            "Pepperoni"});
+            this.DDOrderStatus.FormattingEnabled = true;
+            this.DDOrderStatus.Location = new System.Drawing.Point(17, 93);
+            this.DDOrderStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.DDOrderStatus.Name = "DDOrderStatus";
+            this.DDOrderStatus.Size = new System.Drawing.Size(376, 21);
+            this.DDOrderStatus.TabIndex = 44;
+            this.DDOrderStatus.SelectedIndexChanged += new System.EventHandler(this.DDOrderStatus_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -721,12 +767,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAccSign);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
             this.Name = "Form1";
             this.Text = "PizzaChain.org";
             this.panel1.ResumeLayout(false);
@@ -810,6 +856,9 @@
         private System.Windows.Forms.TextBox txtEditPass;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ListBox HistoryBoxList;
+        private System.Windows.Forms.Label txtPriceStatus;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox DDOrderStatus;
     }
 }
 

@@ -34,7 +34,7 @@ namespace PizzaOrderSystem
             orderId = 0;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void editAccount_Click(object sender, EventArgs e)
         {
             panel3.Show();
             panel2.Hide();
@@ -75,7 +75,7 @@ namespace PizzaOrderSystem
             Console.WriteLine("Done.");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void accountCreate_Click(object sender, EventArgs e)
         {
             panel2.Show();
             panel8.Hide();
@@ -86,13 +86,13 @@ namespace PizzaOrderSystem
             panel3.Hide();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void appCancel_Click(object sender, EventArgs e)
         {
             panel2.Hide();
             label1.Show();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void appSubmit_Click(object sender, EventArgs e)
         {
             string email = UNametxt.Text;
             string name = Nametxt.Text;
@@ -116,7 +116,7 @@ namespace PizzaOrderSystem
             label1.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void orderStatus_Click(object sender, EventArgs e)
         {
             panel4.Show();
             panel8.Hide();
@@ -125,99 +125,10 @@ namespace PizzaOrderSystem
             panel5.Hide();
             panel6.Hide();
             panel3.Hide();
-
-            if(OrderTime == DateTime.MinValue)
+            if (OrderTime == DateTime.MinValue)
             {
                 StatusTxt.Text = "NO ORDER";
             }
-            else if(orderId <= 0){
-                string connStr = "server=csitmariadb.eku.edu;user=student;database=csc340_db;port=3306;password=Maroon@21?;";
-                MySqlConnection conn = new MySqlConnection(connStr);
-                try
-                {
-                    Console.WriteLine("Connecting to MySQL...");
-                    conn.Open();
-
-                    string sql = "SELECT * FROM pizzaplanet_orders WHERE orderedby=@uemail";
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@uemail", eMail);
-                    MySqlDataReader myReader = cmd.ExecuteReader();
-
-                    while (myReader.Read())
-                    {
-                        orderId = (int)myReader["orderid"];
-                    }
-
-                    myReader.Close();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                }
-                conn.Close();
-            }
-            if(orderId > 0)
-            {
-                StatusTxt.Text = "ERROR";
-                string connStr = "server=csitmariadb.eku.edu;user=student;database=csc340_db;port=3306;password=Maroon@21?;";
-                MySqlConnection conn = new MySqlConnection(connStr);
-                try
-                {
-                    Console.WriteLine("Connecting to MySQL...");
-                    conn.Open();
-
-                    string sql = "SELECT * FROM pizzaplanet_orders WHERE orderid = @orderID";
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@orderID", orderId);
-                    MySqlDataReader myReader = cmd.ExecuteReader();
-
-                    if (myReader.Read())
-                    {
-                        string status = myReader["orderstatus"].ToString();
-                        Console.WriteLine(status);
-                        Console.WriteLine("orderId");
-                        if (status.Equals("0"))
-                        {
-                            StatusTxt.Text = "Ordered";
-                        }
-                        if (status.Equals("1"))
-                        {
-                            StatusTxt.Text = "Making";
-                        }
-                        if (status.Equals("2"))
-                        {
-                            StatusTxt.Text = "Recived";
-                        }
-                    }
-
-                    myReader.Close();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                }
-                conn.Close();
-            }
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            panel4.Hide();
-            label1.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            panel5.Show();
-            panel8.Hide();
-            label1.Hide();
-            panel2.Hide();
-            panel4.Hide();
-            panel6.Hide();
-            panel3.Hide();
-
-            DDOrderHis.Items.Clear();
-
             string connStr = "server=csitmariadb.eku.edu;user=student;database=csc340_db;port=3306;password=Maroon@21?;";
             MySqlConnection conn = new MySqlConnection(connStr);
             try
@@ -235,6 +146,57 @@ namespace PizzaOrderSystem
                 {
                     string comboString = "";
                     comboString += myReader["timeordered"] + " - " + myReader["price"] + " - " + myReader["orderid"];
+                    DDOrderStatus.Items.Add(comboString);
+                }
+                myReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            conn.Close();
+            Console.WriteLine("Done.");
+        }
+
+        private void statusReturn_Click(object sender, EventArgs e)
+        {
+            panel4.Hide();
+            label1.Show();
+        }
+
+        private void orderHistory_Click(object sender, EventArgs e)
+        {
+            panel5.Show();
+            panel8.Hide();
+            label1.Hide();
+            panel2.Hide();
+            panel4.Hide();
+            panel6.Hide();
+            panel3.Hide();
+
+            DDOrderHis.Items.Clear();
+            DateTime yesterday = DateTime.Today.AddDays(-1);
+
+            string connStr = "server=csitmariadb.eku.edu;user=student;database=csc340_db;port=3306;password=Maroon@21?;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                Console.WriteLine("Connecting to MySQL...");
+                conn.Open();
+
+                string sql = "SELECT * FROM pizzaplanet_orders WHERE orderedby=@name";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@name", eMail);
+
+                MySqlDataReader myReader = cmd.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    string comboString = "";
+                    if ((DateTime)myReader["timeordered"] > yesterday)
+                    {
+                        comboString += myReader["timeordered"] + " - " + myReader["price"] + " - " + myReader["orderid"];
+                    }
                     DDOrderHis.Items.Add(comboString);
                 }
                 myReader.Close();
@@ -247,13 +209,13 @@ namespace PizzaOrderSystem
             Console.WriteLine("Done.");
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void historyCancel_Click(object sender, EventArgs e)
         {
             panel5.Hide();
             label1.Show();
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void historyReOrder_Click(object sender, EventArgs e)
         {
             string connStr = "server=csitmariadb.eku.edu;user=student;database=csc340_db;port=3306;password=Maroon@21?;";
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -281,7 +243,7 @@ namespace PizzaOrderSystem
             conn.Close();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void orderPizza_Click(object sender, EventArgs e)
         {
             panel6.Show();
             panel2.Hide();
@@ -296,13 +258,13 @@ namespace PizzaOrderSystem
             OrderListtxt.Items.Clear();
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void orderCancel_Click(object sender, EventArgs e)
         {
             panel6.Hide();
             label1.Show();
         }
 
-        private void btnAddOrder_Click(object sender, EventArgs e)
+        private void AddOrder_Click(object sender, EventArgs e)
         {
             int valA = OrderPizzaDD.SelectedIndex + 1;
             int valB = OrderSizeDD.SelectedIndex + 1;
@@ -312,7 +274,7 @@ namespace PizzaOrderSystem
             Console.WriteLine(Order);
         }
 
-        private void btnOrderNow_Click(object sender, EventArgs e)
+        private void OrderNow_Click(object sender, EventArgs e)
         {
             string encodeOrder = Pizza.encodeOrder(Order);
 
@@ -344,7 +306,7 @@ namespace PizzaOrderSystem
             Console.WriteLine("Done.");
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void accountLogin_Click_1(object sender, EventArgs e)
         {
             panel8.Show();
             panel2.Hide();
@@ -355,13 +317,13 @@ namespace PizzaOrderSystem
             panel6.Hide();
         }
 
-        private void btnLogCancel_Click(object sender, EventArgs e)
+        private void LogCancel_Click(object sender, EventArgs e)
         {
             panel8.Hide();
             label1.Show();
         }
 
-        private void btnLogSubmit_Click(object sender, EventArgs e)
+        private void LogSubmit_Click(object sender, EventArgs e)
         {
             //login
             string emailtxt = txtLogEmail.Text;
@@ -379,13 +341,13 @@ namespace PizzaOrderSystem
             }
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void editCancel_Click(object sender, EventArgs e)
         {
             panel3.Hide();
             label1.Show();
         }
 
-        private void btnEditSubmit_Click(object sender, EventArgs e)
+        private void editSubmit_Click(object sender, EventArgs e)
         {
             //submit edit
             string email = eMail;
@@ -441,7 +403,6 @@ namespace PizzaOrderSystem
                         HistoryBoxList.Items.Add(pizzas[i]);
                     }
 
-
                     //Add total price to List
                     HistoryBoxList.Items.Add("Total: $" + myReader["price"]);
                 }
@@ -453,6 +414,55 @@ namespace PizzaOrderSystem
             }
             conn.Close();
             Console.WriteLine("Done.");
+        }
+
+        private void DDOrderStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string dropDown = (string)DDOrderStatus.SelectedItem;
+            orderId = Int32.Parse(dropDown.Split('-').Last().Substring(1));
+            if (orderId > 0)
+            {
+                StatusTxt.Text = "ERROR";
+                string connStr = "server=csitmariadb.eku.edu;user=student;database=csc340_db;port=3306;password=Maroon@21?;";
+                MySqlConnection conn = new MySqlConnection(connStr);
+                try
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+
+                    string sql = "SELECT * FROM pizzaplanet_orders WHERE orderid = @orderID";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@orderID", orderId);
+                    MySqlDataReader myReader = cmd.ExecuteReader();
+
+                    if (myReader.Read())
+                    {
+                        string status = myReader["orderstatus"].ToString();
+                        Console.WriteLine(status);
+                        Console.WriteLine("orderId");
+                        if (status.Equals("0"))
+                        {
+                            StatusTxt.Text = "Ordered";
+                        }
+                        if (status.Equals("1"))
+                        {
+                            StatusTxt.Text = "Making";
+                        }
+                        if (status.Equals("2"))
+                        {
+                            StatusTxt.Text = "Recived";
+                        }
+                        txtPriceStatus.Text = "$" + myReader["price"].ToString();
+                    }
+
+                    myReader.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                conn.Close();
+            }
         }
     }
 }
