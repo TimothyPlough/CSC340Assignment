@@ -270,6 +270,7 @@ namespace PizzaOrderSystem
             int valB = OrderSizeDD.SelectedIndex + 1;
             Order = Order + valB + "" + valA + "";
             price = price + (valB * 6);
+            txtOrderPriceTotal.Text = "$"+price;
             OrderListtxt.Items.Add(((string)OrderSizeDD.SelectedItem) + " " + ((string)OrderPizzaDD.SelectedItem) + " - $" + (valB * 6));
             Console.WriteLine(Order);
         }
@@ -405,6 +406,7 @@ namespace PizzaOrderSystem
 
                     //Add total price to List
                     HistoryBoxList.Items.Add("Total: $" + myReader["price"]);
+                    txtReOrderPrice.Text = "$"+myReader["price"].ToString();
                 }
                 myReader.Close();
             }

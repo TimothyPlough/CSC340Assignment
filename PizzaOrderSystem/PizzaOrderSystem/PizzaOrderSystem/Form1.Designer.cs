@@ -92,6 +92,10 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtOrderPriceTotal = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtReOrderPrice = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -108,7 +112,7 @@
             this.panel1.Controls.Add(this.btnOrderHis);
             this.panel1.Controls.Add(this.btnEditAcc);
             this.panel1.Location = new System.Drawing.Point(59, 74);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(224, 391);
             this.panel1.TabIndex = 0;
@@ -116,7 +120,7 @@
             // btnOrder
             // 
             this.btnOrder.Location = new System.Drawing.Point(33, 30);
-            this.btnOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(153, 52);
             this.btnOrder.TabIndex = 5;
@@ -127,7 +131,7 @@
             // btnCheck
             // 
             this.btnCheck.Location = new System.Drawing.Point(33, 110);
-            this.btnCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheck.Margin = new System.Windows.Forms.Padding(4);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(153, 52);
             this.btnCheck.TabIndex = 4;
@@ -138,7 +142,7 @@
             // btnOrderHis
             // 
             this.btnOrderHis.Location = new System.Drawing.Point(33, 206);
-            this.btnOrderHis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrderHis.Margin = new System.Windows.Forms.Padding(4);
             this.btnOrderHis.Name = "btnOrderHis";
             this.btnOrderHis.Size = new System.Drawing.Size(153, 52);
             this.btnOrderHis.TabIndex = 3;
@@ -149,7 +153,7 @@
             // btnEditAcc
             // 
             this.btnEditAcc.Location = new System.Drawing.Point(33, 295);
-            this.btnEditAcc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditAcc.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditAcc.Name = "btnEditAcc";
             this.btnEditAcc.Size = new System.Drawing.Size(153, 52);
             this.btnEditAcc.TabIndex = 1;
@@ -160,7 +164,7 @@
             // btnAccSign
             // 
             this.btnAccSign.Location = new System.Drawing.Point(173, 487);
-            this.btnAccSign.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAccSign.Margin = new System.Windows.Forms.Padding(4);
             this.btnAccSign.Name = "btnAccSign";
             this.btnAccSign.Size = new System.Drawing.Size(153, 52);
             this.btnAccSign.TabIndex = 2;
@@ -196,7 +200,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(392, 74);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(539, 465);
             this.panel2.TabIndex = 2;
@@ -204,7 +208,7 @@
             // btnAccSubmit
             // 
             this.btnAccSubmit.Location = new System.Drawing.Point(279, 372);
-            this.btnAccSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAccSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnAccSubmit.Name = "btnAccSubmit";
             this.btnAccSubmit.Size = new System.Drawing.Size(137, 44);
             this.btnAccSubmit.TabIndex = 12;
@@ -215,7 +219,7 @@
             // btnAccCancel
             // 
             this.btnAccCancel.Location = new System.Drawing.Point(103, 372);
-            this.btnAccCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAccCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnAccCancel.Name = "btnAccCancel";
             this.btnAccCancel.Size = new System.Drawing.Size(137, 44);
             this.btnAccCancel.TabIndex = 11;
@@ -226,7 +230,7 @@
             // Passtxt
             // 
             this.Passtxt.Location = new System.Drawing.Point(193, 288);
-            this.Passtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Passtxt.Margin = new System.Windows.Forms.Padding(4);
             this.Passtxt.Name = "Passtxt";
             this.Passtxt.Size = new System.Drawing.Size(221, 22);
             this.Passtxt.TabIndex = 10;
@@ -234,7 +238,7 @@
             // UNametxt
             // 
             this.UNametxt.Location = new System.Drawing.Point(193, 236);
-            this.UNametxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UNametxt.Margin = new System.Windows.Forms.Padding(4);
             this.UNametxt.Name = "UNametxt";
             this.UNametxt.Size = new System.Drawing.Size(221, 22);
             this.UNametxt.TabIndex = 9;
@@ -242,7 +246,7 @@
             // Phonetxt
             // 
             this.Phonetxt.Location = new System.Drawing.Point(193, 190);
-            this.Phonetxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Phonetxt.Margin = new System.Windows.Forms.Padding(4);
             this.Phonetxt.Name = "Phonetxt";
             this.Phonetxt.Size = new System.Drawing.Size(221, 22);
             this.Phonetxt.TabIndex = 8;
@@ -250,7 +254,7 @@
             // Addtxt
             // 
             this.Addtxt.Location = new System.Drawing.Point(193, 140);
-            this.Addtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Addtxt.Margin = new System.Windows.Forms.Padding(4);
             this.Addtxt.Name = "Addtxt";
             this.Addtxt.Size = new System.Drawing.Size(221, 22);
             this.Addtxt.TabIndex = 7;
@@ -258,7 +262,7 @@
             // Nametxt
             // 
             this.Nametxt.Location = new System.Drawing.Point(193, 92);
-            this.Nametxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Nametxt.Margin = new System.Windows.Forms.Padding(4);
             this.Nametxt.Name = "Nametxt";
             this.Nametxt.Size = new System.Drawing.Size(221, 22);
             this.Nametxt.TabIndex = 6;
@@ -333,7 +337,7 @@
             this.panel4.Controls.Add(this.btnstatReturn);
             this.panel4.Controls.Add(this.StatusTxt);
             this.panel4.Location = new System.Drawing.Point(391, 75);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(539, 465);
             this.panel4.TabIndex = 14;
@@ -390,7 +394,7 @@
             // btnstatReturn
             // 
             this.btnstatReturn.Location = new System.Drawing.Point(208, 407);
-            this.btnstatReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnstatReturn.Margin = new System.Windows.Forms.Padding(4);
             this.btnstatReturn.Name = "btnstatReturn";
             this.btnstatReturn.Size = new System.Drawing.Size(137, 44);
             this.btnstatReturn.TabIndex = 12;
@@ -413,13 +417,15 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel5.Controls.Add(this.label22);
+            this.panel5.Controls.Add(this.txtReOrderPrice);
             this.panel5.Controls.Add(this.HistoryBoxList);
             this.panel5.Controls.Add(this.btnReOrder);
             this.panel5.Controls.Add(this.DDOrderHis);
             this.panel5.Controls.Add(this.label17);
             this.panel5.Controls.Add(this.button11);
             this.panel5.Location = new System.Drawing.Point(392, 74);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(539, 465);
             this.panel5.TabIndex = 41;
@@ -437,7 +443,7 @@
             // btnReOrder
             // 
             this.btnReOrder.Location = new System.Drawing.Point(279, 407);
-            this.btnReOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnReOrder.Name = "btnReOrder";
             this.btnReOrder.Size = new System.Drawing.Size(137, 44);
             this.btnReOrder.TabIndex = 44;
@@ -469,7 +475,7 @@
             // button11
             // 
             this.button11.Location = new System.Drawing.Point(131, 407);
-            this.button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(137, 44);
             this.button11.TabIndex = 12;
@@ -480,6 +486,8 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel6.Controls.Add(this.label20);
+            this.panel6.Controls.Add(this.txtOrderPriceTotal);
             this.panel6.Controls.Add(this.btnAddOrder);
             this.panel6.Controls.Add(this.OrderSizeDD);
             this.panel6.Controls.Add(this.btnOrderNow);
@@ -488,7 +496,7 @@
             this.panel6.Controls.Add(this.OrderListtxt);
             this.panel6.Controls.Add(this.OrderPizzaDD);
             this.panel6.Location = new System.Drawing.Point(391, 74);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(539, 465);
             this.panel6.TabIndex = 45;
@@ -496,7 +504,7 @@
             // btnAddOrder
             // 
             this.btnAddOrder.Location = new System.Drawing.Point(208, 407);
-            this.btnAddOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddOrder.Name = "btnAddOrder";
             this.btnAddOrder.Size = new System.Drawing.Size(137, 44);
             this.btnAddOrder.TabIndex = 47;
@@ -524,7 +532,7 @@
             // btnOrderNow
             // 
             this.btnOrderNow.Location = new System.Drawing.Point(384, 407);
-            this.btnOrderNow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrderNow.Margin = new System.Windows.Forms.Padding(4);
             this.btnOrderNow.Name = "btnOrderNow";
             this.btnOrderNow.Size = new System.Drawing.Size(137, 44);
             this.btnOrderNow.TabIndex = 44;
@@ -546,7 +554,7 @@
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(21, 407);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(137, 44);
             this.btnCancel.TabIndex = 12;
@@ -561,7 +569,7 @@
             this.OrderListtxt.Location = new System.Drawing.Point(3, 194);
             this.OrderListtxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OrderListtxt.Name = "OrderListtxt";
-            this.OrderListtxt.Size = new System.Drawing.Size(533, 196);
+            this.OrderListtxt.Size = new System.Drawing.Size(533, 116);
             this.OrderListtxt.TabIndex = 46;
             // 
             // OrderPizzaDD
@@ -584,7 +592,7 @@
             // btnAccLog
             // 
             this.btnAccLog.Location = new System.Drawing.Point(13, 487);
-            this.btnAccLog.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAccLog.Margin = new System.Windows.Forms.Padding(4);
             this.btnAccLog.Name = "btnAccLog";
             this.btnAccLog.Size = new System.Drawing.Size(153, 52);
             this.btnAccLog.TabIndex = 46;
@@ -603,7 +611,7 @@
             this.panel8.Controls.Add(this.label11);
             this.panel8.Controls.Add(this.label13);
             this.panel8.Location = new System.Drawing.Point(392, 75);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(539, 465);
             this.panel8.TabIndex = 13;
@@ -611,7 +619,7 @@
             // btnLogSubmit
             // 
             this.btnLogSubmit.Location = new System.Drawing.Point(279, 372);
-            this.btnLogSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogSubmit.Name = "btnLogSubmit";
             this.btnLogSubmit.Size = new System.Drawing.Size(137, 44);
             this.btnLogSubmit.TabIndex = 12;
@@ -622,7 +630,7 @@
             // btnLogCancel
             // 
             this.btnLogCancel.Location = new System.Drawing.Point(103, 372);
-            this.btnLogCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogCancel.Name = "btnLogCancel";
             this.btnLogCancel.Size = new System.Drawing.Size(137, 44);
             this.btnLogCancel.TabIndex = 11;
@@ -633,7 +641,7 @@
             // txtLogPassword
             // 
             this.txtLogPassword.Location = new System.Drawing.Point(195, 231);
-            this.txtLogPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLogPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogPassword.Name = "txtLogPassword";
             this.txtLogPassword.Size = new System.Drawing.Size(221, 22);
             this.txtLogPassword.TabIndex = 10;
@@ -641,7 +649,7 @@
             // txtLogEmail
             // 
             this.txtLogEmail.Location = new System.Drawing.Point(195, 137);
-            this.txtLogEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLogEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogEmail.Name = "txtLogEmail";
             this.txtLogEmail.Size = new System.Drawing.Size(221, 22);
             this.txtLogEmail.TabIndex = 9;
@@ -692,7 +700,7 @@
             this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.label19);
             this.panel3.Location = new System.Drawing.Point(392, 74);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(539, 465);
             this.panel3.TabIndex = 13;
@@ -700,7 +708,7 @@
             // txtEditPass
             // 
             this.txtEditPass.Location = new System.Drawing.Point(193, 238);
-            this.txtEditPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEditPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtEditPass.Name = "txtEditPass";
             this.txtEditPass.Size = new System.Drawing.Size(221, 22);
             this.txtEditPass.TabIndex = 16;
@@ -728,7 +736,7 @@
             // btnEditSubmit
             // 
             this.btnEditSubmit.Location = new System.Drawing.Point(279, 372);
-            this.btnEditSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditSubmit.Name = "btnEditSubmit";
             this.btnEditSubmit.Size = new System.Drawing.Size(137, 44);
             this.btnEditSubmit.TabIndex = 12;
@@ -739,7 +747,7 @@
             // btnEditCancel
             // 
             this.btnEditCancel.Location = new System.Drawing.Point(103, 372);
-            this.btnEditCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditCancel.Name = "btnEditCancel";
             this.btnEditCancel.Size = new System.Drawing.Size(137, 44);
             this.btnEditCancel.TabIndex = 11;
@@ -750,7 +758,7 @@
             // txtEditPhone
             // 
             this.txtEditPhone.Location = new System.Drawing.Point(193, 190);
-            this.txtEditPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEditPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtEditPhone.Name = "txtEditPhone";
             this.txtEditPhone.Size = new System.Drawing.Size(221, 22);
             this.txtEditPhone.TabIndex = 8;
@@ -758,7 +766,7 @@
             // txtEditAdd
             // 
             this.txtEditAdd.Location = new System.Drawing.Point(193, 140);
-            this.txtEditAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEditAdd.Margin = new System.Windows.Forms.Padding(4);
             this.txtEditAdd.Name = "txtEditAdd";
             this.txtEditAdd.Size = new System.Drawing.Size(221, 22);
             this.txtEditAdd.TabIndex = 7;
@@ -766,7 +774,7 @@
             // txtEditName
             // 
             this.txtEditName.Location = new System.Drawing.Point(193, 92);
-            this.txtEditName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEditName.Margin = new System.Windows.Forms.Padding(4);
             this.txtEditName.Name = "txtEditName";
             this.txtEditName.Size = new System.Drawing.Size(221, 22);
             this.txtEditName.TabIndex = 6;
@@ -811,6 +819,54 @@
             this.label19.TabIndex = 0;
             this.label19.Text = "Member Edit Form";
             // 
+            // label20
+            // 
+            this.label20.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Maroon;
+            this.label20.Location = new System.Drawing.Point(275, 320);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(190, 57);
+            this.label20.TabIndex = 49;
+            this.label20.Text = "[Pay at Store]";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtOrderPriceTotal
+            // 
+            this.txtOrderPriceTotal.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtOrderPriceTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrderPriceTotal.ForeColor = System.Drawing.Color.Maroon;
+            this.txtOrderPriceTotal.Location = new System.Drawing.Point(52, 339);
+            this.txtOrderPriceTotal.Name = "txtOrderPriceTotal";
+            this.txtOrderPriceTotal.Size = new System.Drawing.Size(269, 38);
+            this.txtOrderPriceTotal.TabIndex = 48;
+            this.txtOrderPriceTotal.Text = "[ENTER PRICE HERE]";
+            this.txtOrderPriceTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label22
+            // 
+            this.label22.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Maroon;
+            this.label22.Location = new System.Drawing.Point(326, 334);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(201, 57);
+            this.label22.TabIndex = 47;
+            this.label22.Text = "[Pay at Store]";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtReOrderPrice
+            // 
+            this.txtReOrderPrice.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtReOrderPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReOrderPrice.ForeColor = System.Drawing.Color.Maroon;
+            this.txtReOrderPrice.Location = new System.Drawing.Point(17, 334);
+            this.txtReOrderPrice.Name = "txtReOrderPrice";
+            this.txtReOrderPrice.Size = new System.Drawing.Size(278, 57);
+            this.txtReOrderPrice.TabIndex = 46;
+            this.txtReOrderPrice.Text = "[ENTER PRICE HERE]";
+            this.txtReOrderPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -821,13 +877,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAccSign);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "PizzaChain.org";
             this.panel1.ResumeLayout(false);
@@ -914,6 +970,10 @@
         private System.Windows.Forms.Label txtPriceStatus;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox DDOrderStatus;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label txtOrderPriceTotal;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label txtReOrderPrice;
     }
 }
 
