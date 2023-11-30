@@ -270,7 +270,7 @@ namespace PizzaOrderSystem
             int valB = OrderSizeDD.SelectedIndex + 1;
             Order = Order + valB + "" + valA + "";
             price = price + (valB * 6);
-            OrderListtxt.Items.Add(((string)OrderSizeDD.SelectedItem) + " " + ((string)OrderPizzaDD.SelectedItem));
+            OrderListtxt.Items.Add(((string)OrderSizeDD.SelectedItem) + " " + ((string)OrderPizzaDD.SelectedItem) + " - $" + (valB * 6));
             Console.WriteLine(Order);
         }
 
